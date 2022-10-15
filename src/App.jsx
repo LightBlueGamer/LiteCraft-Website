@@ -8,18 +8,15 @@ const Home = lazy(() => import("./pages/Home"));
 const Servers = lazy(() => import("./pages/Servers"));
 const Team = lazy(() => import("./pages/Team"));
 
+const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms))
+
 export default function App() {
   return <>
     <div class="bg-slate-800">
       <div>
         <div class="sm:hidden w-full h-full min-w-full min-h-full bg-slate-900 flex justify-items-center">
-          <button onClick={() => {
-            const div = document.getElementById('mobnav');
-            if(div.classList.contains('hidden')) {
-              div.classList.remove('hidden');
-            } else {
-              div.classList.add('hidden');
-            };
+          <button onClick={async() => {
+            const div = document.getElementById('mobnav').classList.toggle('hidden');
           }}>
             <IoReorderThree size={32} class="ml-2" color="#e2e8f0"/>
           </button>
