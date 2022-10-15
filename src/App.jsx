@@ -7,7 +7,7 @@ const Team = lazy(() => import("./pages/Team"));
 
 export default function App() {
   return <>
-    <div class="bg-slate-800 w-screen h-screen">
+    <div class="bg-slate-800 w-full h-full">
       <nav id="navbar" className="sticky top-0 bg-slate-900 flex items-baseline sm:justify-left space-x-4">
         {[
           ['Home', '/'],
@@ -27,7 +27,7 @@ export default function App() {
       <Routes>
         <Route path="/" component={Home} />
         <Route path="/servers" component={Servers} />
-        <Route path="team" component={Team} />
+        <Route path="/team" component={Team} />
       </Routes>
     </div>
   </>
